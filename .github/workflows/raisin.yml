@@ -46,7 +46,7 @@ jobs:
           steps:
           - uses: actions/checkout@v2
           - name: Docker login
-            run: docker login $registryName -u ACR-Token -p ${ACRCREDS.ACR_PASSWORD} selmcrpb7uuykwthreg.azurecr.io
+            run: docker login $registryName -u ${ACRCREDS.ACR_USERNAME} -p ${ACRCREDS.ACR_PASSWORD} ${ACRCREDS.ACR_LOGIN_SERVER}
           - name: Docker build
             run: docker build -t $registryName/$repositoryName:$tag --build-arg build_version=$tag $dockerFolderPath
           - name: Docker push
