@@ -3,8 +3,8 @@ name: first-workflow
 on:
   workflow_dispatch:
 
-job1:
-  build:
+jobs:
+  job1:
     runs-on: ubuntu-latest
 
     steps:
@@ -12,16 +12,14 @@ job1:
       uses: actions/checkout@v2
 
     - name: Run a one-line script
-      run: Step 1
-
-job2:
-  cow:
-    name: Cowsays
+      run: echo "Step 1"
+  
+  job2:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Ship it
+    - name: Cowsays
       uses: mscoutermarsh/cowsays-action@master
       with:
         text: 'ship ship ship!'
         color: 'magenta'
-        
