@@ -1,0 +1,27 @@
+name: first-workflow
+
+on:
+  workflow_dispatch:
+
+job1:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Run a one-line script
+      run: Step 1
+
+job2:
+  cow:
+    name: Cowsays
+    runs-on: ubuntu-latest
+    steps:
+    - name: Ship it
+      uses: mscoutermarsh/cowsays-action@master
+      with:
+        text: 'ship ship ship!'
+        color: 'magenta'
+        
